@@ -102,6 +102,16 @@ namespace IdentityServerAspNetIdentity
                         IdentityServerConstants.StandardScopes.Profile,
                         "api1"
                     }
+                },
+                new Client {
+                    ClientId = "angular_spa",
+                    ClientName = "Angular 4 Client",
+                    AllowedGrantTypes = GrantTypes.Implicit,
+                    AllowedScopes = new List<string> { "openid", "profile", "api1" },
+                    RedirectUris = new List<string> { "http://localhost:4200/auth-callback" },
+                    PostLogoutRedirectUris = new List<string> { "http://localhost:4200/" },
+                    AllowedCorsOrigins = new List<string> { "http://localhost:4200" },
+                    AllowAccessTokensViaBrowser = true
                 }
             };
         }
